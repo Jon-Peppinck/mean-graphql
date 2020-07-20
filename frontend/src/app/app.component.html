@@ -1,0 +1,10 @@
+<h2>Create Quote</h2>
+quote: <input #quote type="text" /> author: <input #author type="text" />
+<button (click)="create(quote.value, author.value)">Submit</button>
+<h1>Quotes</h1>
+<ul>
+  <li *ngFor="let quote of quotes | async">
+    "{{ quote.quote }}", {{ quote.author }}
+    <button (click)="delete(quote._id)">Delete</button>
+  </li>
+</ul>
